@@ -1,9 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        float weight = 57F;
-        int height = 169;
-        float index = weight * 10000 / (height * height);
-        System.out.println(Math.round(index * 100) / 100.0);
+        BmiService service = new BmiService();
+
+        double highIndex = service.calculate(80, 160);
+        System.out.println(highIndex);
+
+        double averageIndex = service.calculate(57, 169);
+        System.out.println(averageIndex);
+
+        double shortIndex = service.calculate(45, 168);
+        System.out.println(shortIndex);
 
     }
 
